@@ -202,8 +202,18 @@ local SL_CustomPrefs =
 		Default = 0,
 		Choices = range(0, 20, 1),
 	},
-}
+	FiveKeyMenu ={
+		Default = false,
+		Choices =  { THEME:GetString("ThemePrefs","Yes"), THEME:GetString("ThemePrefs", "No") },
+		Values	= { true, false }
 
+	},
+	TransparentStats ={
+		Default = false,
+		Choices =  { THEME:GetString("ThemePrefs","Yes"), THEME:GetString("ThemePrefs", "No") },
+		Values	= { true, false }
+	}	
+}
 -- We need to InitAll() now so that ./Scripts/SL_Init.lua can use
 -- this theme's ThemePrefs shortly after.
 ThemePrefs.InitAll(SL_CustomPrefs)

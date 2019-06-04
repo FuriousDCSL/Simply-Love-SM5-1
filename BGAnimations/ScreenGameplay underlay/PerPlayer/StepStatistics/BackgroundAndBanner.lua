@@ -4,8 +4,14 @@ local af = Def.ActorFrame{}
 
 af[#af+1] = Def.Quad{
 	InitCommand=function(self)
-		self:diffuse(Color.Black):diffusealpha(0.95)
+		self:diffuse(Color.Black)
 			:zoomto(_screen.w/2,_screen.h)
+
+		if ThemePrefs.Get("TransparentStats") then
+			self:diffusealpha(0.0)
+		else
+			self:diffusealpha(0.95)
+		end
 
 		if (PREFSMAN:GetPreference("Center1Player") and IsUsingWideScreen()) then
 			-- 16:9 aspect ratio (approximately 1.7778)

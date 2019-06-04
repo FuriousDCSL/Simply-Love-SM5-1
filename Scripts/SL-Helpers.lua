@@ -259,7 +259,7 @@ end
 -- whatever string is finally returned is passed off to the pertinent LineNames= in Metrics.ini
 
 function GetOperatorMenuLineNames()
-	local lines = "System,KeyConfig,TestInput,Visual,GraphicsSound,Arcade,Input,Theme,MenuTimer,CustomSongs,Advanced,Profiles,Acknowledgments,ClearCredits,Reload"
+	local lines = "System,KeyConfig,TestInput,Visual,GraphicsSound,Arcade,Input,Theme,Joe,MenuTimer,CustomSongs,Advanced,Profiles,Acknowledgments,ClearCredits,Reload"
 
 	-- the TestInput screen only supports dance, pump, and techno; remove it when in other games
 	local CurrentGame = GAMESTATE:GetCurrentGame():GetName()

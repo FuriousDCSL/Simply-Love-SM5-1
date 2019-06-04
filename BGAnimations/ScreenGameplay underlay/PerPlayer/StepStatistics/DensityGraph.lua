@@ -54,6 +54,13 @@ local bg = Def.Quad{
 			:align(0,0)
 			:diffuse(color("#1E282F"))
 
+		if ThemePrefs.Get("TransparentStats") then
+			self:diffusealpha(0.0)
+		else
+			self:diffusealpha(0.95)
+		end
+
+
 		if (PREFSMAN:GetPreference("Center1Player") and IsUsingWideScreen()) then
 			-- 16:9 aspect ratio (approximately 1.7778)
 			if GetScreenAspectRatio() > 1.7 then
@@ -195,6 +202,12 @@ local graph_mask = Def.Quad{
 			:x( WideScale(160, 214) + _screen.cx * (player==PLAYER_1  and -1 or 1) )
 			:y(-48)
 			:diffuse( Color.Black )
+
+		if ThemePrefs.Get("TransparentStats") then
+			self:diffusealpha(0.0)
+		else
+			self:diffusealpha(0.95)
+		end
 
 
 		-- handle Center1Player begrudgingly with clumsy code
